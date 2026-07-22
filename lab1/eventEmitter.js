@@ -1,21 +1,26 @@
-import{ EventEmitter} from "node:events";
-
+import{ EventEmitter } from "node:events";
 const task = new EventEmitter();
 
 const sayHi = (name) => {
-    console.log(`logged in ${name}`);
+    console.log(`Logged In ${name}`);
 };
 
-const starts = () =>(`${name} start shopping`);
-{
-    console.log("System Started");
+const starts = () => {
+    console.log("System started");
+
 };
 
-task.once("greet",starts);
-task.on("greet",sayHi); // Event and method binding
-task.on("greet",(name)=>){}
-console.log(`${name} start shopping`);
+
+task.once("greet", starts);
+task.on("greet", sayHi);
+task.on("greet",(name) => {
+    console.log(` ${name} starts shopping`);
+});
+task.on("greet",(name) => {
+    console.log(`${name} logged out`);
 });
 
+
 task.emit("greet","Aniket Kumar Singh"); // Announcement
-task.emit("greet","Amit Kumar"); 
+task.emit("greet","Ambalisha Singh");
+task.emit("greet","Alisha Singh");
