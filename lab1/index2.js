@@ -1,4 +1,4 @@
-// write a function to take number between 0 to 9 and return in words
+// // write a function to take number between 0 to 9 and return in words
 
 
 const numberToWord = (num) => {
@@ -19,6 +19,5 @@ console.log(numberToWord(5));
 console.log(numberToWord(6));
 console.log(numberToWord(7));
 console.log(numberToWord(8));
-console.log(numberToWord(9)); 
+console.log(numberToWord(9));
 
-console.log(numberToWord(11)); 
