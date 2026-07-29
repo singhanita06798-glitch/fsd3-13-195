@@ -25,7 +25,7 @@ it direct connect with client OS rather than browser
 
 - Directory Management
   -> mkdir()
-  -> rmdir()
+  -> rmdir()- depricated
   -> readdir()
 
 - Metadata/ Information
