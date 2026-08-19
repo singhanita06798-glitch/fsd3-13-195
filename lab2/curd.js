@@ -1,25 +1,40 @@
-import readline from 'readline/promises';
-import { writeFile,readFile } from"fs/promises";
+import readline from "readline/promises";
+import { writeFile, readFile } from "fs/promises";
 
-import {stdin,stdout}from 'process';
+import { stdin, stdout } from "process";
 
-const FILE ="products.json"
-const saveCart=async(cart)=>{
-    await writeFile(FILE,JSON.stringify(cart,null,2));
+const FILE = "products.json";
+const saveCart = async (cart) => {
+  await writeFile(FILE, JSON.stringify(cart, null, 2));
 };
 
-const gatCart=async()=>{
-    const data = await readFile(FILE, "utf-8");
-    return JSON.parse(data);
+const gatCart = async () => {
+  const data = await readFile(FILE, "utf-8");
+  return JSON.parse(data);
 };
 
+const addToCart = async () => {
+  const products = await getCart();
+  products.push(item);
+  await saveCart(products);
+};
 
+const showCart = ()=>{
+  console.log("Show Cart")
+};
 
+const updateCart =()=>{
+  console.log("Update Cart")
+};
 
-const main =async () =>{
-    const cin = readline.createInterface({ input: stdin, output: stdout });
-    let choice;
-    do{
+const deleteFromCart =()=>{
+  console.log("Delete from Car")
+};
+
+const main = async () => {
+  const cin = readline.createInterface({ input: stdin, output: stdout });
+  let choice;
+  do {
     console.log("Welcome to shopping cart 🛒");
     console.log("1 ----- Add to cart");
     console.log("2 ----- Show cart");
@@ -29,32 +44,47 @@ const main =async () =>{
     choice = await cin.question("Enter your choice:");
     console.log("Entered choice:", choice);
 
-switch(Number(choice)){
-    case 1: 
-        console.log("add to cart");
-    break;
-    case 2:
-        console.log("Show cart items");
-    break;
-    case 3:
-        console.log("Remove items");
-    break;
-    case 4:
-        console.log("Update quantity");
-    break;
-    case 5:
+    switch (Number(choice)) {
+      case 1:
+        let data = await cin.question('Enter id,name,price,qty:');
+        let p= data.split((","));
+        console.table(p);
+        let q=p.map((item)=>item.trim());
+        // console.table(q);
+        let [id,name,price,qty]=q;
+        console.log(id,name,price,qty);
+
+        const product={
+          id: Number(id),
+          name,
+          price:Number(price),
+          qty:Number(qty)
+        };
+        console.log(product);
+
+        break;
+      case 2:
+        showCart();
+        
+        break;
+      case 3:
+        deleteFromCart();
+        
+        break;
+      case 4:
+        updateCart();
+        
+        break;
+      case 5:
         console.log("See you later...😃");
-        process.exit()
-    break;
-    default:
+        process.exit();
+        break;
+      default:
         console.log("Inalid choice! try again 😡");
-}
+    }
+  } while (choice != 5);
 
-} while(choice!=5);
-
-
-    cin.close();
-
+  cin.close();
 };
 
 main();
