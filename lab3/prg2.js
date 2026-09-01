@@ -1,10 +1,9 @@
-import http from 'http';
+import http from "http";
 
-
-const srever = http.createServer((req,res)=>{
-    res.write("<h1>Hello Clinet</h1>");
+const server = http.createServer((req,res )=> {
+    res.write("<h1>Heloo Client</h1>");
+    res.write("<h2>ANIKET KUMAR SINGH</h2>");
     res.end();
 });
 
-
-server.lesten(4444,()=>console.log("server is running at 4444..."));
+server.listen(4444, () => console.log("server is running at 4444..."));
