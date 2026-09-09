@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Smart Water Pot</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #eaf8ff;
+            color: #123;
+        }
+
+        header {
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        header h1 {
+            font-size: 32px;
+        }
+
+        header p {
+            margin-top: 8px;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+
+        .main {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        /* Water Pot */
+
+        .pot {
+            width: 220px;
+            height: 280px;
+            background: #ddd;
+            border: 6px solid #555;
+            border-radius: 20px 20px 45px 45px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .pot-top {
+            width: 130px;
+            height: 35px;
+            background: #555;
+            position: absolute;
+            top: -35px;
+            left: 40px;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .water {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 70%;
+            background: #48cae4;
+            transition: 0.5s;
+        }
+
+        .water-level {
+            position: absolute;
+            top: 45%;
+            width: 100%;
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            color: #005f73;
+            z-index: 2;
+        }
+
+        /* Information */
+
+        .info {
+            width: 400px;
+        }
+
+        .info h2 {
+            color: #0077b6;
+            margin-bottom: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            margin: 12px 0;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            color: #0077b6;
+            margin-bottom: 8px;
+        }
+
+        .value {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        button {
+            margin-top: 15px;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 25px;
+            background: #0077b6;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #023e8a;
+        }
+
+        .features {
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        .features h2 {
+            color: #0077b6;
+            margin-bottom: 25px;
+        }
+
+        .feature-box {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .feature {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        }
+
+        .feature .icon {
+            font-size: 40px;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #0077b6;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media(max-width: 700px) {
+            .feature-box {
+                grid-template-columns: 1fr;
+            }
+
+            .info {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>💧 Smart Water Pot</h1>
+        <p>Monitor and manage your water easily</p>
+    </header>
+
+
+    <div class="container">
+
+        <div class="main">
+
+            <!-- Water Pot -->
+            <div>
+                <div class="pot">
+                    <div class="pot-top"></div>
+
+                    <div class="water" id="water"></div>
+
+                    <div class="water-level" id="waterLevel">
+                        70%
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Information -->
+            <div class="info">
+
+                <h2>Water Pot Status</h2>
+
+                <div class="card">
+                    <h3>💧 Water Level</h3>
+                    <div class="value" id="level">
+                        700 ml
+                    </div>
+                    <p>Maximum capacity: 1000 ml</p>
+                </div>
+
+                <div class="card">
+                    <h3>🌡️ Water Temperature</h3>
+                    <div class="value">
+                        24°C
+                    </div>
+                    <p>Current water temperature</p>
+                </div>
+
+                <div class="card">
+                    <h3>⚡ Pot Status</h3>
+                    <div class="value">
+                        Normal
+                    </div>
+                    <p>Water level is sufficient.</p>
+                </div>
+
+                <button onclick="refillPot()">
+                    💧 Refill Water
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- Features -->
+
+        <div class="features">
+
+            <h2>Features</h2>
+
+            <div class="feature-box">
+
+                <div class="feature">
+                    <div class="icon">💧</div>
+                    <h3>Water Level</h3>
+                    <p>
+                        Easily monitor the amount of water
+                        available in the pot.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🌡️</div>
+                    <h3>Temperature</h3>
+                    <p>
+                        Check the current temperature
+                        of the stored water.
+                    </p>
+                </div>
+
+                <div class="feature">
+                    <div class="icon">🔔</div>
+                    <h3>Alert System</h3>
+                    <p>
+                        Get notified when the water level
+                        becomes low.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <footer>
+        <p>© 2026 Smart Water Pot | College Project</p>
+    </footer>
+
+
+    <script>
+
+        function refillPot() {
+
+            let water = document.getElementById("water");
+            let waterLevel = document.getElementById("waterLevel");
+            let level = document.getElementById("level");
+
+            water.style.height = "100%";
+            waterLevel.innerHTML = "100%";
+            level.innerHTML = "1000 ml";
+
+            alert("💧 Water pot refilled successfully!");
+
+        }
+
+    </script>
+
+</body>
+</html>
