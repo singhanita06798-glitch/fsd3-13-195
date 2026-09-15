@@ -13,6 +13,4 @@ const server = http.createServer((req,res)=>{
     //API Tester:- postman, echo api, thunder client
 
 
-
-
 });
