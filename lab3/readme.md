@@ -89,3 +89,20 @@ one pair of { } will represent one object abd its properties will be seperated b
     review:200
 }
 '''
+
+
+
+## Headers 
+ Header - Is used to tell the client , the type of data send by the server , it may be html files , json file/data, plane text file, css file, any tokens(for login )
+
+1. text/plain -> text file
+2. text/html -> html contents/file
+3. application/json -> json contents/file
+4. text/css -> stylesheet
+5. application/form data -> for uploading file
+6. application/auth -> for tokens
+the headers can be set by res object at server side by two was
+
+7. res.se
+
+
