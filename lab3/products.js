@@ -15,6 +15,9 @@ export const getAllProducts = ()=>{
     
 }
 
-export const addProducts=()=>{
-
-}
+export const addProducts=(item)=>{
+    item.id=nextId;
+    nextIdId++;
+    products.push(item);
+    return item;
+};
