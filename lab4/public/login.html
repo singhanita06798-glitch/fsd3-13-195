@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | BrightPath Tuition</title>
+  <title>Login | BrightPath Tuition</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,9 +12,9 @@
   <div class="nav-container">
     <a class="logo" href="index.html">Bright<span>Path</span> Tuition</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html" class="">Home</a></li>
       <li><a href="registration.html" class="">Registration</a></li>
-      <li><a href="login.html" class="">Login</a></li>
+      <li><a href="login.html" class="active">Login</a></li>
       <li><a href="courses.html" class="">Courses</a></li>
       <li><a href="feedback.html" class="">Feedback</a></li>
       <li><a href="pricing.html" class="">Pricing</a></li>
@@ -23,25 +23,19 @@
 </nav>
 
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Learn Better. Score Better. Grow Better.</h1>
-    <p>Quality tuition classes for school and college students with experienced teachers, small batches, regular tests, and personal attention.</p>
-    <a class="btn" href="registration.html">Register Now</a>
-    <a class="btn btn-outline" href="courses.html">Explore Courses</a>
-  </div>
-</section>
 <section class="section">
   <div class="container">
-    <div class="section-title">
-      <h2>Why Choose BrightPath?</h2>
-      <p>A simple learning experience designed around student success.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><div class="icon">👨‍🏫</div><h3>Expert Teachers</h3><p>Learn from knowledgeable teachers who explain concepts in a clear and practical way.</p></div>
-      <div class="card"><div class="icon">📚</div><h3>Structured Courses</h3><p>Well-planned lessons, practice sheets, revision sessions, and regular assessments.</p></div>
-      <div class="card"><div class="icon">🎯</div><h3>Personal Attention</h3><p>Small batches and doubt-solving sessions help every student stay on track.</p></div>
-    </div>
+    <div class="section-title"><h2>Student Login</h2><p>Access your classes, updates, and learning resources.</p></div>
+    <form class="form-card" action="#" method="post">
+      <div class="form-group"><label for="email">Email Address</label><input id="email" type="email" placeholder="Enter your email" required></div>
+      <div class="form-group"><label for="password">Password</label><input id="password" type="password" placeholder="Enter your password" required></div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;font-size:14px">
+        <label style="font-weight:500"><input type="checkbox" style="width:auto;margin-right:6px"> Remember me</label>
+        <a href="#" style="color:#2563eb;font-weight:600">Forgot Password?</a>
+      </div>
+      <button class="btn" type="submit" style="width:100%">Login</button>
+      <p style="text-align:center;margin-top:18px;color:#64748b">New student? <a href="registration.html" style="color:#2563eb;font-weight:700">Register here</a></p>
+    </form>
   </div>
 </section>
 

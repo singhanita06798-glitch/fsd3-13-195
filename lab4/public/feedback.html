@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | BrightPath Tuition</title>
+  <title>Feedback | BrightPath Tuition</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,35 +12,32 @@
   <div class="nav-container">
     <a class="logo" href="index.html">Bright<span>Path</span> Tuition</a>
     <ul class="nav-links">
-      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="index.html" class="">Home</a></li>
       <li><a href="registration.html" class="">Registration</a></li>
       <li><a href="login.html" class="">Login</a></li>
       <li><a href="courses.html" class="">Courses</a></li>
-      <li><a href="feedback.html" class="">Feedback</a></li>
+      <li><a href="feedback.html" class="active">Feedback</a></li>
       <li><a href="pricing.html" class="">Pricing</a></li>
     </ul>
   </div>
 </nav>
 
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Learn Better. Score Better. Grow Better.</h1>
-    <p>Quality tuition classes for school and college students with experienced teachers, small batches, regular tests, and personal attention.</p>
-    <a class="btn" href="registration.html">Register Now</a>
-    <a class="btn btn-outline" href="courses.html">Explore Courses</a>
-  </div>
-</section>
 <section class="section">
   <div class="container">
-    <div class="section-title">
-      <h2>Why Choose BrightPath?</h2>
-      <p>A simple learning experience designed around student success.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><div class="icon">👨‍🏫</div><h3>Expert Teachers</h3><p>Learn from knowledgeable teachers who explain concepts in a clear and practical way.</p></div>
-      <div class="card"><div class="icon">📚</div><h3>Structured Courses</h3><p>Well-planned lessons, practice sheets, revision sessions, and regular assessments.</p></div>
-      <div class="card"><div class="icon">🎯</div><h3>Personal Attention</h3><p>Small batches and doubt-solving sessions help every student stay on track.</p></div>
+    <div class="section-title"><h2>Student Feedback</h2><p>Your feedback helps us improve our classes.</p></div>
+    <div class="form-card">
+      <div class="info-banner"><b>We value your opinion!</b><br>Please share your experience with our teaching, support, and learning resources.</div>
+      <form action="#" method="post">
+        <div class="two-col">
+          <div class="form-group"><label for="name">Name</label><input id="name" type="text" placeholder="Your name" required></div>
+          <div class="form-group"><label for="course">Course</label><select id="course"><option>Mathematics</option><option>Science</option><option>Computer Science</option><option>Full Academic Package</option></select></div>
+        </div>
+        <div class="form-group"><label for="rating">Overall Rating</label><select id="rating"><option>★★★★★ - Excellent</option><option>★★★★☆ - Very Good</option><option>★★★☆☆ - Good</option><option>★★☆☆☆ - Needs Improvement</option><option>★☆☆☆☆ - Poor</option></select></div>
+        <div class="form-group"><label for="feedback">Your Feedback</label><textarea id="feedback" placeholder="Write your feedback here..." required></textarea></div>
+        <div class="form-group"><label for="suggestion">Suggestions for Improvement</label><textarea id="suggestion" placeholder="Any suggestions?"></textarea></div>
+        <button class="btn" type="submit">Submit Feedback</button>
+      </form>
     </div>
   </div>
 </section>
