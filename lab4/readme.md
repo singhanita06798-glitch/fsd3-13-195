@@ -17,3 +17,18 @@
 
 Send function is used to rewart back contents to the client it may be HTML, JSON, HTML file, PLANE TEXT.
 We can also add status code with status function it can be chain with send function.
+
+# MAP
+
+
+This function is used to iterate any array.it must retrun new array.
+
+'''
+array.map((item)=>{
+   return 
+})
+
+array.map((item)=>())
+'''
+We have to use explicit keyword
+
